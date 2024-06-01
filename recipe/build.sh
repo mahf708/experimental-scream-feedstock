@@ -2,9 +2,11 @@
 
 cd scream/components/eamxx/src/python
 # download this file because otherwise the build will fail...
-wget https://web.lcrc.anl.gov/public/e3sm/inputdata/atm/cam/physprops/p3_lookup_table_1.dat-v4.1.1
+wget https://web.lcrc.anl.gov/public/e3sm/inputdata/atm/scream/tables/p3_lookup_table_2.dat-v4.1.1
+wget https://web.lcrc.anl.gov/public/e3sm/inputdata/atm/scream/tables/p3_lookup_table_1.dat-v4.1.1
 mkdir -p build_src/atm/scream/tables
 mv p3_lookup_table_1.dat-v4.1.1 build_src/atm/scream/tables/
+mv p3_lookup_table_2.dat-v4.1.1 build_src/atm/scream/tables/
 
 cmake \
     -S ../../ \
