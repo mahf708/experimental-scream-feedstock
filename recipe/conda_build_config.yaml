@@ -7,5 +7,4 @@ cxx_compiler_version:   # [linux]
 mpi:
   - openmpi
   - mpich
-  - mpi_serial
   - nompi

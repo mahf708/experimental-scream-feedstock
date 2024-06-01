@@ -55,8 +55,8 @@ requirements:
     - netcdf-cxx4 * {{ mpi_dep_prefix }}_*
     - netcdf-fortran
     - netcdf-fortran * {{ mpi_dep_prefix }}_*
-    - libpnetcdf  # [mpi != 'mpi_serial']
-    - libpnetcdf * {{ mpi_dep_prefix }}_*  # [mpi != 'mpi_serial']
+    - libpnetcdf  # [mpi != 'nompi']
+    - libpnetcdf * {{ mpi_dep_prefix }}_*  # [mpi != 'nompi']
     - python
     - numpy
     - mpi4py
