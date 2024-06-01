@@ -18,7 +18,7 @@
 
 package:
   name: pyeamxx
-  version: 0.0.1.dev5
+  version: 0.0.1.dev6
 
 source:
   url: https://github.com/mahf708/full-scream/releases/download/commit-9a6dfda/9a6dfda-full.tar.gz
@@ -33,6 +33,7 @@ requirements:
   build:
     - cmake
     - make
+    - wget
     - {{ stdlib('c') }}
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
