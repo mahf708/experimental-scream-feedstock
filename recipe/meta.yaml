@@ -1,0 +1,55 @@
+package:
+  name: pyeamxx
+  version: 0.0.1.dev5
+
+source:
+  
+  url: https://github.com/mahf708/full-scream/releases/download/commit-9a6dfda/9a6dfda-full.tar.gz
+  sha256: 6150f16bbdf8407e9ecc4dee3bd9d9f64e9955decd796f27d6d53f2d219e5962
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - cmake
+    - {{ stdlib('c') }}
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    - {{ compiler('fortran') }}
+  host:
+    - python
+    - pybind11
+    - setuptools
+    - build
+    - spdlog
+    - fmt
+    - yaml-cpp
+    - mpich
+    - hdf5 *=*mpich*
+    - libnetcdf 
+    - netcdf-cxx4
+    - netcdf-fortran
+    - python
+    - numpy
+    - mpi4py
+  run:
+    - {{ pin_compatible('spdlog', max_pin='x.x') }}
+    - {{ pin_compatible('fmt', max_pin='x.x') }}
+    - {{ pin_compatible('yaml-cpp', max_pin='x.x') }}
+    - {{ pin_compatible('mpich', max_pin='x.x') }}
+    - hdf5 *=*mpich*
+    - {{ pin_compatible('libnetcdf', max_pin='x.x') }} 
+    - {{ pin_compatible('netcdf-cxx4', max_pin='x.x') }}
+    - {{ pin_compatible('netcdf-fortran', max_pin='x.x') }}
+    - python
+    - {{ pin_compatible('numpy', max_pin='x.x') }}
+    - mpi4py
+
+about:
+  home: https://github.com/E3SM-Project/scream
+  summary: Python wrapper for EAMxx
+
+extra:
+  recipe-maintainers:
+    - scream-team
