@@ -27,13 +27,14 @@ source:
 build:
   number: {{ build }}
   skip: true # [win]
-  string: {{ mpi_prefix }}_h{{ PKG_HASH }}_{{ build }}
+  string: {{ mpi_prefix }}_py{{ CONDA_PY }}_h{{ PKG_HASH }}_{{ build }}
 
 requirements:
   build:
     - cmake
     - make
     - wget
+    - unzip
     - {{ stdlib('c') }}
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
@@ -44,6 +45,7 @@ requirements:
     - pybind11
     - setuptools
     - build
+    - wheel
     - spdlog
     - fmt
     - yaml-cpp
