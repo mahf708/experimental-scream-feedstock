@@ -32,7 +32,7 @@ cmake --build build_src/src/python -j${CPU_COUNT:-128}
 
 find build_src -type f -name "*.so*" | xargs cp -t libpyeamxx/
 
-for f in libpyeamxx/*.so; do patchelf --set-rpath '$ORIGIN' --force-rpath $f; done
+for f in libpyeamxx/*.so*; do patchelf --set-rpath '$ORIGIN' --force-rpath $f; done
 
 $PYTHON -m build -w -n -x
 
