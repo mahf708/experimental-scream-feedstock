@@ -8,7 +8,7 @@ mkdir -p build_src/atm/scream/tables
 mv p3_lookup_table_1.dat-v4.1.1 build_src/atm/scream/tables/
 mv p3_lookup_table_2.dat-v4.1.1 build_src/atm/scream/tables/
 
-cmake \
+cmake -Wno-dev \
     -S ../../ \
     -B build_src \
     -DCMAKE_BUILD_TYPE='Release' \
