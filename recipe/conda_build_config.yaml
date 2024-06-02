@@ -1,10 +1,13 @@
 # eamxx fails with gcc 13
-c_compiler_version:     # [linux]
-  - 12                  # [linux]
-cxx_compiler_version:   # [linux]
-  - 12                  # [linux]
+c_compiler_version:       # [linux]
+  - 12                    # [linux]
+cxx_compiler_version:     # [linux]
+  - 12                    # [linux]
+fortran_compiler_version: # [linux]
+  - 12                    # [linux]
 
+# default to using mpich, else openmpi
+# scorpio needs an mpi...
 mpi:
   - openmpi
   - mpich
-  - nompi
