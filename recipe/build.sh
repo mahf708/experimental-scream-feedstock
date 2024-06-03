@@ -13,10 +13,8 @@ else
     export DATA_DIR=${PREFIX}/share/pyeamxx/inputdata
     # download this file because otherwise the build will fail...
     wget https://web.lcrc.anl.gov/public/e3sm/inputdata/atm/scream/tables/p3_lookup_table_1.dat-v4.1.1
-    wget https://web.lcrc.anl.gov/public/e3sm/inputdata/atm/scream/tables/p3_lookup_table_2.dat-v4.1.1
     mkdir -p ${PREFIX}/share/pyeamxx/inputdata/atm/scream/tables
     mv p3_lookup_table_1.dat-v4.1.1 ${PREFIX}/share/pyeamxx/inputdata/atm/scream/tables
-    mv p3_lookup_table_2.dat-v4.1.1 ${PREFIX}/share/pyeamxx/inputdata/atm/scream/tables
 fi
 
 cmake -Wno-dev \
@@ -51,3 +49,7 @@ $PYTHON -m build -w -n -x
 pushd $SP_DIR
 unzip $SRC_DIR/scream/components/eamxx/src/python/dist/*.whl
 popd
+
+rm -rf ${PREFIX}/share/pyeamxx/inputdata/atm/cam
+rm -rf ${PREFIX}/share/pyeamxx/inputdata/atm/scream/init
+rm -rf ${PREFIX}/share/pyeamxx/inputdata/atm/scream/maps
