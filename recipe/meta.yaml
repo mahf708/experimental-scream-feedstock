@@ -1,5 +1,8 @@
 {% set build = 0 %}
 {% set mactag = "anymachine" %}
+{% set version = "0.0.1" %}
+{% set codetag = "b7a4aa0" %}
+{% set tarsha = "f18e519b38131ae24cdd03f23f670dbf706650474e1c81b27fe5290358be7a6a" %}
 
 # recipe-lint fails if mpi is undefined
 {% set mpi = mpi or 'mpich' %}
@@ -19,11 +22,11 @@
 
 package:
   name: pyeamxx
-  version: 0.0.1
+  version: {{ version }}
 
 source:
-  url: https://github.com/mahf708/full-scream/releases/download/commit-b8e86ba/b8e86ba-full.tar.gz
-  sha256: d39f4d81232a2acc29f95b355677ef9645fa40585446d76fec87cc8c8c2d5d64
+  url: https://github.com/mahf708/full-scream/releases/download/commit-{{ codetag }}/{{ codetag }}-full.tar.gz
+  sha256: {{ tarsha }}
 
 build:
   number: {{ build }}
