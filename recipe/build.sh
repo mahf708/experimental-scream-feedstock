@@ -2,7 +2,7 @@
 
 set -exuo pipefail
 
-export TGT_MAC=${MY_MACHINE:-else}
+export TGT_MAC=${MY_MACHINE:-anymachine}
 
 cd scream/components/eamxx/src/python
 if [[ "$TGT_MAC" == "chrysalis" ]]; then
@@ -24,6 +24,7 @@ cmake -Wno-dev \
     -DEAMXX_ENABLE_PYBIND='ON' \
     -DSCREAM_DOUBLE_PRECISION='OFF' \
     -DSCREAM_ENABLE_MAM='OFF' \
+    -DPIO_ENABLE_IO_STATS='OFF' \
     -DNetcdf_Fortran_PATH=$PREFIX \
     -DNetcdf_C_PATH=$PREFIX \
     -DCMAKE_CXX_FLAGS='-fvisibility-inlines-hidden -fmessage-length=0 -Wno-use-after-free -Wno-unused-variable -Wno-maybe-uninitialized' \
