@@ -27,6 +27,8 @@ package:
 source:
   url: https://github.com/mahf708/full-scream/releases/download/commit-{{ codetag }}/{{ codetag }}-full.tar.gz
   sha256: {{ tarsha }}
+  patches:
+    - patches/patch-p3-tables.patch
 
 build:
   number: {{ build }}
