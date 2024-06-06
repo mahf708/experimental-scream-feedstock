@@ -5,9 +5,9 @@ set -exuo pipefail
 export TGT_MAC=${MY_MACHINE:-anymachine}
 
 cd scream/components/eamxx/src/python
-if [[ "$TGT_MAC" == "chrysalis" ]]; then
+if [[ "$TGT_MAC" == "chrys" ]]; then
     export DATA_DIR=/lcrc/group/e3sm/data/inputdata
-elif [[ "$TGT_MAC" == "pm-cpu" ]]; then
+elif [[ "$TGT_MAC" == "pmcpu" ]]; then
     export DATA_DIR=/global/cfs/cdirs/e3sm/inputdata
 else
     export DATA_DIR=${PREFIX}/share/pyeamxx/inputdata
