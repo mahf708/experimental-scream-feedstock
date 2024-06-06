@@ -32,7 +32,7 @@ build:
   number: {{ build }}
   skip: true # [win]
   skip: true # [osx]
-  string: {{ mpi_prefix }}_py{{ CONDA_PY }}_h{{ PKG_HASH }}_{{ build }}_{{ anymachine }}
+  string: {{ mpi_prefix }}_py{{ CONDA_PY }}_h{{ PKG_HASH }}_{{ build }}_{{ mactag }}
 
 requirements:
   build:
