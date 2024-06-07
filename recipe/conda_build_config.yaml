@@ -11,3 +11,10 @@ fortran_compiler_version: # [linux]
 mpi:
   - openmpi
   - mpich
+
+# set target to mahf708
+# so that we can rerender for gha
+channel_sources:
+  - conda-forge
+channel_targets:
+  - mahf708 main
