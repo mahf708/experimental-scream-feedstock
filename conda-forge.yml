@@ -6,3 +6,5 @@ conda_build:
   pkg_format: '2'
 provider:
   linux_64: github_actions
+github_actions:
+  store_build_artifacts: true

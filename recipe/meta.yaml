@@ -1,8 +1,8 @@
 {% set build = 0 %}
 {% set mactag = "anymachine" %}
-{% set version = "0.0.1" %}
-{% set codetag = "b7a4aa0" %}
-{% set tarsha = "f18e519b38131ae24cdd03f23f670dbf706650474e1c81b27fe5290358be7a6a" %}
+{% set version = "0.0.2" %}
+{% set codetag = "7fb26e6" %}
+{% set tarsha = "dfa0c4bb83134b0c6a9a7ffbb3c94e643ff5144b723f148686aea9b0536e3227" %}
 
 # recipe-lint fails if mpi is undefined
 {% set mpi = mpi or 'mpich' %}
@@ -21,7 +21,7 @@
 {% endif %}
 
 package:
-  name: pyeamxx
+  name: pyscream
   version: {{ version }}
 
 source:
