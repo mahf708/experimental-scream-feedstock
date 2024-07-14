@@ -41,7 +41,6 @@ requirements:
     - unzip
     - git
     - git-lfs
-    - libssh
     - {{ stdlib('c') }}
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
