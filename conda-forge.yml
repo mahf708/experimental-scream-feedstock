@@ -9,4 +9,4 @@ provider:
 github_actions:
   store_build_artifacts: true
   free_disk_space: true
-  artifact_retention_days: 90
+  artifact_retention_days: 30
