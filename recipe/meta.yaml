@@ -24,7 +24,7 @@ package:
   version: {{ version }}
 
 source:
-  git_url: https://github.com/E3SM-Project/scream.git
+  git_url: git@github.com:E3SM-Project/scream.git
   git_tag: {{ codetag }}
 
 build:
