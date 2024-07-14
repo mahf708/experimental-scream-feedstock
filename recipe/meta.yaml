@@ -2,6 +2,7 @@
 {% set mactag = "nomac" %}
 {% set version = "0.0.2" %}
 {% set codetag = "2599ce5" %}
+{% set tarsha = "4a6d367a0d5251e4da12ddc5bdc91705456191ca6dd197239da9c3fa31c9ca61" %}
 
 # recipe-lint fails if mpi is undefined
 {% set mpi = mpi or 'mpich' %}
@@ -24,8 +25,8 @@ package:
   version: {{ version }}
 
 source:
-  git_url: git@github.com:E3SM-Project/scream.git
-  git_tag: {{ codetag }}
+  url: https://github.com/mahf708/full-scream/releases/download/commit-{{ codetag }}/{{ codetag }}-full.tar.gz
+  sha256: {{ tarsha }}
 
 build:
   number: {{ build }}
