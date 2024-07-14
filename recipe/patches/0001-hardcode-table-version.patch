@@ -1,0 +1,49 @@
+From a8a7fefd83bfe0e19795ebd5d825b4e62c6b2428 Mon Sep 17 00:00:00 2001
+From: mahf708 <naser.mahfouz@pnnl.gov>
+Date: Sat, 20 Jul 2024 17:18:34 -0700
+Subject: [PATCH] hardcode table version
+
+---
+ components/eamxx/src/physics/p3/impl/p3_table_ice_impl.hpp | 4 ++--
+ components/eamxx/src/physics/p3/p3_functions.hpp           | 3 +--
+ 2 files changed, 3 insertions(+), 4 deletions(-)
+
+diff --git a/components/eamxx/src/physics/p3/impl/p3_table_ice_impl.hpp b/components/eamxx/src/physics/p3/impl/p3_table_ice_impl.hpp
+index 4c2a43603d..f2c86f656c 100644
+--- a/components/eamxx/src/physics/p3/impl/p3_table_ice_impl.hpp
++++ b/components/eamxx/src/physics/p3/impl/p3_table_ice_impl.hpp
+@@ -30,7 +30,7 @@ void Functions<S,D>
+   // read in ice microphysics table into host views
+   //
+ 
+-  std::string filename = std::string(P3C::p3_lookup_base) + std::string(P3C::p3_version);
++  std::string filename = std::string(P3C::p3_lookup_base);
+ 
+   std::ifstream in(filename);
+ 
+@@ -38,7 +38,7 @@ void Functions<S,D>
+   std::string version, version_val;
+   in >> version >> version_val;
+   EKAT_REQUIRE_MSG(version == "VERSION", "Bad " << filename << ", expected VERSION X.Y.Z header");
+-  EKAT_REQUIRE_MSG(version_val == P3C::p3_version, "Bad " << filename << ", expected version " << P3C::p3_version << ", but got " << version_val);
++  EKAT_REQUIRE_MSG(version_val == "4.1.1", "Bad " << filename << ", expected version " << "4.1.1" << ", but got " << version_val);
+ 
+   // read tables
+   double dum_s; int dum_i; // dum_s needs to be double to stream correctly
+diff --git a/components/eamxx/src/physics/p3/p3_functions.hpp b/components/eamxx/src/physics/p3/p3_functions.hpp
+index 47bb4560c2..4af359d837 100644
+--- a/components/eamxx/src/physics/p3/p3_functions.hpp
++++ b/components/eamxx/src/physics/p3/p3_functions.hpp
+@@ -45,9 +45,8 @@ struct Functions
+     };
+ 
+     static constexpr ScalarT lookup_table_1a_dum1_c =  4.135985029041767e+00; // 1.0/(0.1*log10(261.7))
+-    static constexpr const char* p3_lookup_base = SCREAM_DATA_DIR "/tables/p3_lookup_table_1.dat-v";
++    static constexpr const char* p3_lookup_base = SCREAM_DATA_DIR "/tables/p3_lookup_table_1.dat-v4.1.1";
+ 
+-    static constexpr const char* p3_version = "4.1.1"; // TODO: Change this so that the table version and table path is a runtime option.
+   };
+ 
+   //
+-- 
+2.35.3

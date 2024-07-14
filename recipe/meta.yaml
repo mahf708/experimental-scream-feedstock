@@ -1,8 +1,8 @@
-{% set build = 0 %}
+{% set build = 1 %}
 {% set mactag = "nomac" %}
 {% set version = "0.0.2" %}
-{% set codetag = "2599ce5" %}
-{% set tarsha = "4a6d367a0d5251e4da12ddc5bdc91705456191ca6dd197239da9c3fa31c9ca61" %}
+{% set codetag = "3e0bb22" %}
+{% set tarsha = "b9c3b018eb20eccb749cd8678ffa8bc90721535c3292f3edea4252ec6f3b197e" %}
 
 # recipe-lint fails if mpi is undefined
 {% set mpi = mpi or 'mpich' %}
@@ -27,6 +27,8 @@ package:
 source:
   url: https://github.com/mahf708/full-scream/releases/download/commit-{{ codetag }}/{{ codetag }}-full.tar.gz
   sha256: {{ tarsha }}
+  patches:
+    - patches/0001-Allow-for-custom-CUDA-build.patch
 
 build:
   number: {{ build }}
