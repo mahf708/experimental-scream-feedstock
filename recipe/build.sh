@@ -2,9 +2,9 @@
 
 set -exuo pipefail
 
-export TGT_MAC=${MY_MACHINE:-anymachine}
+export TGT_MAC=${MY_MACHINE:-nomac}
 
-cd scream/components/eamxx/src/python
+cd components/eamxx/src/python
 if [[ "$TGT_MAC" == "chrys" ]]; then
     export DATA_DIR=/lcrc/group/e3sm/data/inputdata
 elif [[ "$TGT_MAC" == "pmcpu" ]]; then
@@ -48,7 +48,7 @@ for f in libpyscream/*.so*; do patchelf --set-rpath '$ORIGIN' --force-rpath $f; 
 $PYTHON -m build -w -n -x
 
 pushd $SP_DIR
-unzip $SRC_DIR/scream/components/eamxx/src/python/dist/*.whl
+unzip $SRC_DIR/components/eamxx/src/python/dist/*.whl
 popd
 
 rm -rf ${PREFIX}/share/pyscream/inputdata/atm/cam
