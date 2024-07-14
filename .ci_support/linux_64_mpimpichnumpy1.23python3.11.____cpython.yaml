@@ -28,8 +28,6 @@ hdf5:
 - 1.14.3
 libnetcdf:
 - 4.9.2
-libssh:
-- '0.10'
 mpi:
 - mpich
 mpich:
