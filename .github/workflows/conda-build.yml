@@ -223,7 +223,7 @@ jobs:
       with:
         name: ${{ steps.prepare-artifacts.outputs.BLD_ARTIFACT_NAME }}
         path: ${{ steps.prepare-artifacts.outputs.BLD_ARTIFACT_PATH }}
-        retention-days: 90
+        retention-days: 30
       continue-on-error: true
 
     - name: Store conda build environment artifacts
@@ -232,5 +232,5 @@ jobs:
       with:
         name: ${{ steps.prepare-artifacts.outputs.ENV_ARTIFACT_NAME }}
         path: ${{ steps.prepare-artifacts.outputs.ENV_ARTIFACT_PATH }}
-        retention-days: 90
+        retention-days: 30
       continue-on-error: true
