@@ -40,7 +40,6 @@ requirements:
     - wget
     - unzip
     - git
-    - git-lfs
     - {{ stdlib('c') }}
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
