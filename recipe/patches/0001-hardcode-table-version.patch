@@ -4,14 +4,14 @@ Date: Sat, 20 Jul 2024 17:18:34 -0700
 Subject: [PATCH] hardcode table version
 
 ---
- components/eamxx/src/physics/p3/impl/p3_table_ice_impl.hpp | 4 ++--
- components/eamxx/src/physics/p3/p3_functions.hpp           | 3 +--
+ scream/components/eamxx/src/physics/p3/impl/p3_table_ice_impl.hpp | 4 ++--
+ scream/components/eamxx/src/physics/p3/p3_functions.hpp           | 3 +--
  2 files changed, 3 insertions(+), 4 deletions(-)
 
-diff --git a/components/eamxx/src/physics/p3/impl/p3_table_ice_impl.hpp b/components/eamxx/src/physics/p3/impl/p3_table_ice_impl.hpp
+diff --git a/scream/components/eamxx/src/physics/p3/impl/p3_table_ice_impl.hpp b/scream/components/eamxx/src/physics/p3/impl/p3_table_ice_impl.hpp
 index 4c2a43603d..f2c86f656c 100644
---- a/components/eamxx/src/physics/p3/impl/p3_table_ice_impl.hpp
-+++ b/components/eamxx/src/physics/p3/impl/p3_table_ice_impl.hpp
+--- a/scream/components/eamxx/src/physics/p3/impl/p3_table_ice_impl.hpp
++++ b/scream/components/eamxx/src/physics/p3/impl/p3_table_ice_impl.hpp
 @@ -30,7 +30,7 @@ void Functions<S,D>
    // read in ice microphysics table into host views
    //
@@ -30,10 +30,10 @@ index 4c2a43603d..f2c86f656c 100644
  
    // read tables
    double dum_s; int dum_i; // dum_s needs to be double to stream correctly
-diff --git a/components/eamxx/src/physics/p3/p3_functions.hpp b/components/eamxx/src/physics/p3/p3_functions.hpp
+diff --git a/scream/components/eamxx/src/physics/p3/p3_functions.hpp b/scream/components/eamxx/src/physics/p3/p3_functions.hpp
 index 47bb4560c2..4af359d837 100644
---- a/components/eamxx/src/physics/p3/p3_functions.hpp
-+++ b/components/eamxx/src/physics/p3/p3_functions.hpp
+--- a/scream/components/eamxx/src/physics/p3/p3_functions.hpp
++++ b/scream/components/eamxx/src/physics/p3/p3_functions.hpp
 @@ -45,9 +45,8 @@ struct Functions
      };
  

@@ -28,7 +28,7 @@ source:
   url: https://github.com/mahf708/full-scream/releases/download/commit-{{ codetag }}/{{ codetag }}-full.tar.gz
   sha256: {{ tarsha }}
   patches:
-    - patches/0001-Allow-for-custom-CUDA-build.patch
+    - patches/0001-hardcode-table-version.patch
 
 build:
   number: {{ build }}
